@@ -20,7 +20,7 @@ long x = 0;
 void loop () {  
   if (casio_uart0.available()) {
     if (x == 99) {
-      casio_uart0.recieve38K(&x, 1);
+      casio_uart0.recieve38K(&x, 1); // after this, we expect the calculator program to stop, when this happens, a single byte will be send. Therefore we have to read 1 extra byte, which is done by setting the second parameter to 1.
     } else {
       casio_uart0.recieve38K(&x, 0);
     }
