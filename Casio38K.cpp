@@ -54,7 +54,7 @@ int Casio38K::recieve38K(long * x, bool end) {
 	uart_port->read();
 	// Response with CodeA(0x13 for OK):
 	uart_port->print((char)0x13);
-	// recieve the header:
+	// receive the header:
 	for (int i = 0; i < 10; i++) {
 		while (!uart_port->available());
 		uart_port->read();
